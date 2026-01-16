@@ -1,0 +1,17 @@
+# service-order-api.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-api-service  #ici ca doit correspondre exactement au nom utilisé dans frontend/app.py (et c'est le cas: ORDER_API_URL = "http://order-api-service:5000/orders")
+  labels:
+    app: order-api
+    tier: backend
+spec:
+  type: ClusterIP  #service interne uniquement (c'est pas accessible depuis Internet)
+  selector:
+    app: order-api  #cela oit correspondre EXACTEMENT aux labels du deployment, car lorsque notre front va faire appel à l'url de order-api-service, kubernetes (via ce fichier service) va rediriger le front vers les pods avec le tag 'order-api'
+  ports:
+  - name: http
+    protocol: TCP
+    port: 5000        # Port d'écoute du service dans le cluster
+    targetPort: 5000  # Port du container (doit correspondre au containerPort dans le deployment)

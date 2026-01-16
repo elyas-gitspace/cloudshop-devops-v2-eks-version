@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - product-api
+      - order-api
+    networks:
+      - app-network
+
+  product-api:
+    build: ./product-api
+    ports:
+      - "5001:5000"
+    networks:
+      - app-network
+
+  order-api:
+    build: ./order-api
+    ports:
+      - "5002:5000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+

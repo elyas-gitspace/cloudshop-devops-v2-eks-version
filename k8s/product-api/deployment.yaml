@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: product-api
+  template:
+    metadata:
+      labels:
+        app: product-api
+    spec:
+      containers:
+      - name: product-api
+        image: 375033339237.dkr.ecr.eu-west-1.amazonaws.com/cloudshop-product-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        env:
+        - name: FLASK_ENV
+          value: production
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-api
+spec:
+  selector:
+    app: product-api
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+

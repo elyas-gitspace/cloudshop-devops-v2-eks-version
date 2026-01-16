@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-api-service
+spec:
+  type: ClusterIP  #expose l'API uniquement au sein du cluster (pas sur Internet)
+  selector:
+    app: product-api
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+---
