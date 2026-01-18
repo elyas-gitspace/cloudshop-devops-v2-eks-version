@@ -92,9 +92,6 @@ cloudshop/
 
 ### **__Workflow global__**
 
-```
-
-
 __Provisionnement de l’infrastructure (Terraform)__
 
 ```
@@ -107,10 +104,7 @@ __Provisionnement de l’infrastructure (Terraform)__
 - Les node groups EC2
 
 - Les rôles IAM nécessaires
-
-Il y a aucune action via la console AWS et l'Infrastructure est reproductible et versionnée
 ```
-
 
 __CI/CD avec GitHub Actions__
 
