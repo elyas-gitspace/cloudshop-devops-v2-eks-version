@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-PRODUCT_API_URL = "http://product-api-service:5000/products" 
+PRODUCT_API_URL = "http://product-api-service:5000/products"    
 ORDER_API_URL = "http://order-api-service:5000/orders"     
 
 @app.route("/")

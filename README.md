@@ -7,13 +7,13 @@ CloudShop est une application cloud-native en microservices, déployée sur AWS 
 
 Ce projet illustre un workflow DevOps professionnel et réaliste :
 
-Aucune création manuelle d’infrastructure
+- Aucune création manuelle d’infrastructure
 
-Infrastructure décrite en code (IaC)
+- Infrastructure décrite en code (IaC)
 
-Déploiement automatisé via CI/CD
+- Déploiement automatisé via CI/CD
 
-Architecture sécurisée et scalable
+- Architecture sécurisée (du moins suffisante dans le cadre de notre projet scolaire) et scalable
 ```
 
 __Objectifs du projet__
@@ -88,8 +88,10 @@ cloudshop/
 └── .github/
     └── workflows/
         └── ci-cd.yml
+```
 
-__Workflow global__
+### **__Workflow global__**
+
 ```
 
 
