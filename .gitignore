@@ -1,4 +1,9 @@
-# Terraform
-.terraform/
-terraform.tfstate
-terraform.tfstate.*
+# Ajoute ces lignes à ton .gitignore
+echo "" >> .gitignore
+echo "# Terraform" >> .gitignore
+echo ".terraform/" >> .gitignore
+echo "*.tfstate" >> .gitignore
+echo "*.tfstate.*" >> .gitignore
+echo "*.tfvars" >> .gitignore
+echo "terraform.tfstate.backup" >> .gitignore
+echo "terraform-provider-*" >> .gitignore
